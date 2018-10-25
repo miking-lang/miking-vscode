@@ -1,0 +1,26 @@
+{
+    "name": "miking-vscode",
+    "displayName": "Miking VSCode",
+    "description": "Language support for Miking Lang",
+    "version": "0.0.1",
+    "publisher": "SimoneStefani",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "mi",
+            "aliases": ["Miking", "mi"],
+            "extensions": [".mi"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "mi",
+            "scopeName": "source.miking",
+            "path": "./syntaxes/mi.tmLanguage.json"
+        }]
+    }
+}
