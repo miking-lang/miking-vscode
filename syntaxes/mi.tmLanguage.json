@@ -7,19 +7,82 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#characters"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#entities"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.mi",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(ifexp|lam|let)\\b"
+			},
+			{
+				"name": "keyword.operator.arithmetic.mi",
+				"match": "\\b(not|and|or|add|addi|subi|muli|leqi|divi|modi|negi|lti|gti|geqi|eqi|neqi|sub|mul|div|neg|negf|mulf|subf|addf|divf)\\b"
+			}]
+		},
+		"entities": {
+			"patterns": [{
+				"name": "entity.name.function.mi",
+				"match": "\\b(utest)\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.double-slash.mi",
+				"begin": "//",
+				"end": "\n"
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.language.mi",
+				"match": "\\b(true|false|nop)\\b"
+			},
+			{
+				"name": "constant.numeric.float.mi",
+				"match": "\\b(?i:(\\d+e[\\-\\+]?\\d+))"
+			},
+			{
+				"name": "constant.numeric.integer.decimal.mi",
+				"match": "\\b([1-9]+[0-9]*|0)"
+			}]
+		},
+		"storage": {
+			"patterns": [{
+				"name": "storage.type.mi",
+				"match": "\\b(Int)\\b"
 			}]
 		},
 		"strings": {
 			"name": "string.quoted.double.mi",
 			"begin": "\"",
 			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mi",
+					"match": "\\\\."
+				}
+			]
+		},
+		"characters": {
+			"name": "string.quoted.single.mi",
+			"begin": "'",
+			"end": "'",
 			"patterns": [
 				{
 					"name": "constant.character.escape.mi",
