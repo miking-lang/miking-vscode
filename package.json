@@ -11,10 +11,11 @@
         "Programming Languages"
     ],
     "contributes": {
+            
         "languages": [{
             "id": "mi",
             "aliases": ["Miking", "mi"],
-            "extensions": [".mi"],
+            "extensions": [".mc"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
@@ -24,3 +25,4 @@
         }]
     }
 }
+

@@ -25,10 +25,11 @@
 		}
 	],
 	"repository": {
+		
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.mi",
-				"match": "\\b(ifexp|lam|let)\\b"
+				"match": "\\b(Lam|con|else|end|fix|if|in|lam|lang|let|match|recursive|sem|syn|then|type|use|with)\\b"
 			},
 			{
 				"name": "keyword.operator.arithmetic.mi",
@@ -38,13 +39,13 @@
 		"entities": {
 			"patterns": [{
 				"name": "entity.name.function.mi",
-				"match": "\\b(utest)\\b"
+				"match": "\\b(utest|mexpr|include|never)\\b"
 			}]
 		},
 		"comments": {
 			"patterns": [{
-				"name": "comment.line.double-slash.mi",
-				"begin": "//",
+				"name": "comment.line.double-dash.mi",
+				"begin": "--",
 				"end": "\n"
 			}]
 		},
@@ -89,6 +90,10 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"brackets": {
+			"name": "brackets.simple.mi",
+			"match": "\\b(Dfa)\\b"
 		}
 	},
 	"scopeName": "source.miking"
