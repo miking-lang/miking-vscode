@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Miking",
+	"name": "MCore",
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -28,73 +28,73 @@
 		
 		"keywords": {
 			"patterns": [{
-				"name": "keyword.control.mi",
+				"name": "keyword.control.mcore",
 				"match": "\\b(Lam|con|else|end|fix|if|in|lam|lang|let|match|recursive|sem|syn|then|type|use|with)\\b"
 			},
 			{
-				"name": "keyword.operator.arithmetic.mi",
+				"name": "keyword.operator.arithmetic.mcore",
 				"match": "\\b(not|and|or|add|addi|subi|muli|leqi|divi|modi|negi|lti|gti|geqi|eqi|neqi|sub|mul|div|neg|negf|mulf|subf|addf|divf)\\b"
 			}]
 		},
 		"entities": {
 			"patterns": [{
-				"name": "entity.name.function.mi",
+				"name": "entity.name.function.mcore",
 				"match": "\\b(utest|mexpr|include|never)\\b"
 			}]
 		},
 		"comments": {
 			"patterns": [{
-				"name": "comment.line.double-dash.mi",
+				"name": "comment.line.double-dash.mcore",
 				"begin": "--",
 				"end": "\n"
 			}]
 		},
 		"constants": {
 			"patterns": [{
-				"name": "constant.language.mi",
+				"name": "constant.language.mcore",
 				"match": "\\b(true|false|nop)\\b"
 			},
 			{
-				"name": "constant.numeric.float.mi",
+				"name": "constant.numeric.float.mcore",
 				"match": "\\b(?i:(\\d+e[\\-\\+]?\\d+))"
 			},
 			{
-				"name": "constant.numeric.integer.decimal.mi",
+				"name": "constant.numeric.integer.decimal.mcore",
 				"match": "\\b([1-9]+[0-9]*|0)"
 			}]
 		},
 		"storage": {
 			"patterns": [{
-				"name": "storage.type.mi",
+				"name": "storage.type.mcore",
 				"match": "\\b(Int)\\b"
 			}]
 		},
 		"strings": {
-			"name": "string.quoted.double.mi",
+			"name": "string.quoted.double.mcore",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.mi",
+					"name": "constant.character.escape.mcore",
 					"match": "\\\\."
 				}
 			]
 		},
 		"characters": {
-			"name": "string.quoted.single.mi",
+			"name": "string.quoted.single.mcore",
 			"begin": "'",
 			"end": "'",
 			"patterns": [
 				{
-					"name": "constant.character.escape.mi",
+					"name": "constant.character.escape.mcore",
 					"match": "\\\\."
 				}
 			]
 		},
 		"brackets": {
-			"name": "brackets.simple.mi",
+			"name": "brackets.simple.mcore",
 			"match": "\\b(Dfa)\\b"
 		}
 	},
-	"scopeName": "source.miking"
+	"scopeName": "source.mcore"
 }

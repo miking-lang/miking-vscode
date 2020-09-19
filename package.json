@@ -1,27 +1,26 @@
 {
-    "name": "miking-vscode",
-    "displayName": "Miking VSCode",
-    "description": "Language support for Miking Lang",
+    "name": "miking-core-vscode",
+    "displayName": "Miking Core VSCode",
+    "description": "Language support for Miking Core",
     "version": "0.0.1",
     "publisher": "SimoneStefani",
     "engines": {
-        "vscode": "^1.28.0"
+        "vscode": "^1.49.0"
     },
     "categories": [
         "Programming Languages"
     ],
     "contributes": {
-            
         "languages": [{
-            "id": "mi",
-            "aliases": ["Miking", "mi"],
+            "id": "mcore",
+            "aliases": ["MCore", "mcore"],
             "extensions": [".mc"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "mi",
-            "scopeName": "source.miking",
-            "path": "./syntaxes/mi.tmLanguage.json"
+            "language": "mcore",
+            "scopeName": "source.mcore",
+            "path": "./syntaxes/mcore.tmLanguage.json"
         }]
     }
 }
