@@ -1,27 +1,40 @@
 {
-    "name": "miking-core-vscode",
-    "displayName": "Miking Core VSCode",
-    "description": "Language support for Miking Core",
-    "version": "0.0.1",
-    "publisher": "SimoneStefani",
-    "engines": {
-        "vscode": "^1.49.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "miking-core-vscode",
+  "displayName": "Miking Core VSCode",
+  "description": "Language support for Miking Core",
+  "version": "0.0.1",
+  "publisher": "SimoneStefani",
+  "repository": "https://github.com/miking-lang/miking-vscode",
+  "engines": {
+    "vscode": "^1.49.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "mcore",
+        "aliases": [
+          "MCore",
+          "mcore"
+        ],
+        "extensions": [
+          ".mc"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "mcore",
-            "aliases": ["MCore", "mcore"],
-            "extensions": [".mc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "mcore",
-            "scopeName": "source.mcore",
-            "path": "./syntaxes/mcore.tmLanguage.json"
-        }]
-    }
+    "grammars": [
+      {
+        "language": "mcore",
+        "scopeName": "source.mcore",
+        "path": "./syntaxes/mcore.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish --yarn"
+  }
 }
-
