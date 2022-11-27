@@ -5,3 +5,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 - Initial release
+
+## [1.0.0]
+
+### Added
+
+- Rudimentary indentation rules
+
+### Changed
+
+- Re-written language grammar to use more granular scopes and include new langauge constructs.

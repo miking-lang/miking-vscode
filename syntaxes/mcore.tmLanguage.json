@@ -2,46 +2,137 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "MCore",
   "patterns": [
-    {
-      "include": "#keywords"
-    },
-    {
-      "include": "#strings"
-    },
-    {
-      "include": "#characters"
-    },
-    {
-      "include": "#comment"
-    },
-    {
-      "include": "#constants"
-    },
-    {
-      "include": "#storage"
-    },
-    {
-      "include": "#entities"
-    }
+    { "include": "#strings" },
+    { "include": "#characters" },
+    { "include": "#comment" },
+    { "include": "#bindings" },
+    { "include": "#intrinsics" },
+    { "include": "#keywords" },
+    { "include": "#literals" },
+    { "include": "#types" },
+    { "include": "#identifiers" },
+    { "include": "#operators" }
   ],
   "repository": {
-    "keywords": {
+    "bindings": {
       "patterns": [
         {
-          "name": "keyword.control.mcore",
-          "match": "\\b(Lam|con|else|end|fix|if|in|lam|lang|let|match|recursive|sem|syn|then|type|use|with)\\b"
+          "comment": "let expression/semantic functions",
+          "match": "\\b(let|sem)[[:space:]]+(([[:lower:]_][[:word:]']*)|(#var\".*\"))",
+          "captures": {
+            "1": { "name": "keyword.mcore" },
+            "2": { "name": "entity.name.function.binding.mcore" }
+          }
         },
         {
-          "name": "keyword.operator.arithmetic.mcore",
-          "match": "\\b(not|and|or|add|addi|subi|muli|leqi|divi|modi|negi|lti|gti|geqi|eqi|neqi|sub|mul|div|neg|negf|mulf|subf|addf|divf)\\b"
+          "comment": "type/syntax definition",
+          "match": "\\b(type|syn)[[:space:]]+(([[:upper:]][[:word:]']*)|(#type\".*\"))",
+          "captures": {
+            "1": { "name": "keyword.mcore" },
+            "2": { "name": "entity.name.type.binding.mcore" }
+          }
+        },
+        {
+          "comment": "Constructor definition",
+          "match": "\\b(con)[[:space:]]+(([[:upper:]][[:word:]']*)|(#con\".*\"))",
+          "captures": {
+            "1": { "name": "keyword.mcore" },
+            "2": { "name": "entity.name.tag.binding.mcore" }
+          }
         }
       ]
     },
-    "entities": {
+    "operators": {
       "patterns": [
         {
-          "name": "entity.name.function.mcore",
-          "match": "\\b(utest|mexpr|include|never)\\b"
+          "name": "keyword.operator.mcore",
+          "match": "[=\\|:;\\.\\-+,&_!#][>+]?"
+        }
+      ]
+    },
+    "intrinsics": {
+      "patterns": [
+        {
+          "comment": "Unsafe coercion",
+          "name": "support.function.mcore",
+          "match": "\\b(unsafeCoerce)\\b"
+        },
+        {
+          "comment": "Interger and floats",
+          "name": "support.function.mcore",
+          "match": "\\b((add|sub|mul|div|mod|neg|lt|leq|gt|geq|eq|neq)(i|f))\\b"
+        },
+        {
+          "comment": "Integer and floats",
+          "name": "support.function.mcore",
+          "match": "\\b(slli|srli|srai|floorfi|ceilfi|roundfi|int2float|stringIsFloat|string2float|float2string)\\b"
+        },
+        {
+          "comment": "Characters",
+          "name": "support.function.mcore",
+          "match": "\\b(eqc|char2int|int2char)\\b"
+        },
+        {
+          "comment": "Sequences",
+          "name": "support.function.mcore",
+          "match": "\\b(create|createList|createRope|isList|isRope|length|concat|get|set|cons|snoc|splitAt|reverse|head|tail|null|map|mapi|iter|iteri|foldl|foldr|subsequence)\\b"
+        },
+        {
+          "comment": "Random numbers",
+          "name": "support.function.mcore",
+          "match": "\\b(randIntU|randSetSeed)\\b"
+        },
+        {
+          "comment": "Time",
+          "name": "support.function.mcore",
+          "match": "\\b(wallTimeMs|sleepMs)\\b"
+        },
+        {
+          "comment": "Debug and I/O",
+          "name": "support.function.mcore",
+          "match": "\\b(print|printError|dprint|flushStdout|flushStderr|readLine|readBytesAsString|argv|readFile|writeFile|fileExists|deleteFile|command|error|exit)\\b"
+        },
+        {
+          "comment": "Constructor tags",
+          "name": "support.function.mcore",
+          "match": "\\b(constructorTag)\\b"
+        },
+        {
+          "comment": "Symbols",
+          "name": "support.function.mcore",
+          "match": "\\b(eqsym|gensym|sym2hash)\\b"
+        },
+        {
+          "comment": "References",
+          "name": "support.function.mcore",
+          "match": "\\b(ref|deref|modref)\\b"
+        },
+        {
+          "comment": "Maps",
+          "name": "support.function.mcore",
+          "match": "\\b(mapEmpty|mapSize|mapGetCmpFun|mapInsert|mapRemove|mapFindExn|mapFindOrElse|mapFindApplyOrElse|mapAny|mapMem|mapMap|mapMapWithKey|mapFoldWithKey|mapBindings|mapChooseExn|mapChooseOrElse|mapEq|mapCmp)\\b"
+        },
+        {
+          "comment": "Tensors",
+          "name": "support.function.mcore",
+          "match": "\\b(tensorCreateUninitInt|tensorCreateUninitFloat|tensorCreateCArrayInt|tensorCreateCArrayFloat|tensorCreateDense|tensorGetExn|tensorSetExn|tensorLinearGetExn|tensorLinearSetExn|tensorRank|tensorShape|tensorReshapeExn|tensorCopy|tensorTransposeExn|tensorSliceExn|tensorSubExn|tensorIterSlice|tensorEq|tensor2string)\\b"
+        },
+        {
+          "comment": "Boot parser",
+          "name": "support.function.mcore",
+          "match": "\\b(bootParserParseMExprString|bootParserParseMCoreFile|bootParserGetId|bootParserGetTerm|bootParserGetType|bootParserGetString|bootParserGetInt|bootParserGetFloat|bootParserGetListLength|bootParserGetConst|bootParserGetPat|bootParserGetInfo)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.mcore",
+          "match": "\\b(if|then|else|match|with|utest|type|con|lang|let|recursive|lam|in|end|syn|sem|use|using|external|switch|case|all)\\b"
+        },
+        {
+          "name": "keyword.control.mcore",
+          "match": "\\b(mexpr|include|never)\\b"
         }
       ]
     },
@@ -67,30 +158,6 @@
       "name": "invalid.illegal.block.mcore",
       "match": "-[/]"
     },
-    "constants": {
-      "patterns": [
-        {
-          "name": "constant.language.mcore",
-          "match": "\\b(true|false|nop)\\b"
-        },
-        {
-          "name": "constant.numeric.float.mcore",
-          "match": "\\b(?i:(\\d+e[\\-\\+]?\\d+))"
-        },
-        {
-          "name": "constant.numeric.integer.decimal.mcore",
-          "match": "\\b([1-9]+[0-9]*|0)"
-        }
-      ]
-    },
-    "storage": {
-      "patterns": [
-        {
-          "name": "storage.type.mcore",
-          "match": "\\b(Int)\\b"
-        }
-      ]
-    },
     "strings": {
       "name": "string.quote.double.mcore",
       "begin": "\"",
@@ -113,9 +180,51 @@
         }
       ]
     },
-    "brackets": {
-      "name": "brackets.simple.mcore",
-      "match": "\\b(Dfa)\\b"
+    "literals": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.mcore",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "comment": "floating point decimal literal with exponent",
+          "name": "constant.numeric.decimal.float.mcore",
+          "match": "\\b([[:digit:]][[:digit:]_]*(\\.[[:digit:]_]*)?[eE][+-]?[[:digit:]][[:digit:]_]*[g-zG-Z]?)\\b"
+        },
+        {
+          "comment": "floating point decimal literal",
+          "name": "constant.numeric.decimal.float.mcore",
+          "match": "\\b([[:digit:]][[:digit:]_]*)(\\.[[:digit:]_]\\b|\\.)"
+        },
+        {
+          "comment": "decimal integer literal",
+          "name": "constant.numeric.decimal.integer.mcore",
+          "match": "\\b([[:digit:]][[:digit:]_]*)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "comment": "builtin type",
+          "name": "support.type.mcore",
+          "match": "\\b(Tensor|Unknown|Bool|Int|Float|Char|String)\\b"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "comment": "capital identifier for constructor or type",
+          "name": "constant.other.capital-identifier.mcore",
+          "match": "\\b[[:upper:]][[:word:]']*('|\\b)"
+        },
+        {
+          "comment": "lowercase identifier",
+          "name": "source.mcore",
+          "match": "\\b[[:lower:]_][[:word:]']*\\b"
+        }
+      ]
     }
   },
   "scopeName": "source.mcore"
