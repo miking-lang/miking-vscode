@@ -189,7 +189,7 @@
         {
           "comment": "floating point decimal literal with exponent",
           "name": "constant.numeric.decimal.float.mcore",
-          "match": "\\b([[:digit:]][[:digit:]_]*(\\.[[:digit:]_]*)?[eE][+-]?[[:digit:]][[:digit:]_]*[g-zG-Z]?)\\b"
+          "match": "\\b([[:digit:]][[:digit:]_]*(\\.[[:digit:]_]*)?[eE][+-]?[[:digit:]][[:digit:]_]*)\\b"
         },
         {
           "comment": "floating point decimal literal",
