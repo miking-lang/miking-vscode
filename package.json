@@ -36,5 +36,8 @@
   "scripts": {
     "package": "vsce package",
     "publish": "vsce publish --yarn"
+  },
+  "dependencies": {
+    "vsce": "^2.14.0"
   }
 }
