@@ -28,7 +28,7 @@
         ["'", "'"]
     ],
     "indentationRules": {
-        "decreaseIndentPattern": "^\\s*(end|in|then|else|with|case)\\b",
-        "increaseIndentPattern": "\\blet[ \\t]+.*=[ \\t]*$|\\blam\\b.*\\.[ \\t]*$|\\b(if|then|else|match|switch|case)[ \\t]*$",
+        "decreaseIndentPattern": "^\\s*(end|in|then|else|with)\\b",
+        "increaseIndentPattern": "\\blet[ \\t]+.*=[ \\t]*$|\\blam\\b.*\\.[ \\t]*$|\\b(if|then|else|match|case|utest)[ \\t]*$|\\b(recursive|switch)\\b",
     }
 }
