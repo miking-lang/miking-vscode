@@ -1,6 +1,7 @@
 {
     "comments": {
-        // symbol used for single line comment. Remove this entry if your language does not support line comments
+        // symbol used for single line comment. Remove this entry if your 
+        // language does not support line comments.
         "lineComment": "--",
         "blockComment": ["[/]-", "-[/]"]
     
@@ -13,11 +14,10 @@
     ],
     // symbols that are auto closed when typing
     "autoClosingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
+        { "open": "{", "close": "}" },
+        { "open": "[", "close": "]" },
+        { "open": "(", "close": ")" },
+        { "open": "\"", "close": "\"", "notIn": ["string"] },
     ],
     // symbols that that can be used to surround a selection
     "surroundingPairs": [
@@ -26,5 +26,9 @@
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
-    ]
+    ],
+    "indentationRules": {
+        "decreaseIndentPattern": "^\\s*(end|in|then|else|with)\\b",
+        "increaseIndentPattern": "\\blet[ \\t]+.*=[ \\t]*$|\\blam\\b.*\\.[ \\t]*$|\\b(if|then|else|match|case|utest)[ \\t]*$|\\b(recursive|switch)\\b",
+    }
 }
