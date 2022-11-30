@@ -14,7 +14,7 @@ followed by
 ```
 npm run vsce package
 ```
-This will produce a `vsix` file in the root directory. Alternatively you can download a pre-build `vsix` file from [https://github.com/miking-lang/miking-vscode/tags]([https://github.com/miking-lang/miking-vscode/tags]).
+This will produce a `vsix` file in the root directory. Alternatively you can download a pre-build `vsix` file from [https://github.com/miking-lang/miking-vscode/tags](https://github.com/miking-lang/miking-vscode/tags).
 
 To install the extension in vscode run
 ```
