@@ -58,7 +58,7 @@
           "match": "\\b(unsafeCoerce)\\b"
         },
         {
-          "comment": "Interger and floats",
+          "comment": "Integer and floats",
           "name": "support.function.mcore",
           "match": "\\b((add|sub|mul|div|mod|neg|lt|leq|gt|geq|eq|neq)(i|f))\\b"
         },
