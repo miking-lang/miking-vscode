@@ -13,7 +13,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ### Added
 
-- Rudimentary indentation rules
+- Rudimentary indentation rules.
 
 ### Changed
 
