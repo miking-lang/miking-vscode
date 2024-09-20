@@ -108,11 +108,6 @@
           "match": "\\b(ref|deref|modref)\\b"
         },
         {
-          "comment": "Maps",
-          "name": "support.function.mcore",
-          "match": "\\b(mapEmpty|mapSize|mapGetCmpFun|mapInsert|mapRemove|mapFindExn|mapFindOrElse|mapFindApplyOrElse|mapAny|mapMem|mapMap|mapMapWithKey|mapFoldWithKey|mapBindings|mapChooseExn|mapChooseOrElse|mapEq|mapCmp)\\b"
-        },
-        {
           "comment": "Tensors",
           "name": "support.function.mcore",
           "match": "\\b(tensorCreateUninitInt|tensorCreateUninitFloat|tensorCreateCArrayInt|tensorCreateCArrayFloat|tensorCreateDense|tensorGetExn|tensorSetExn|tensorLinearGetExn|tensorLinearSetExn|tensorRank|tensorShape|tensorReshapeExn|tensorCopy|tensorTransposeExn|tensorSliceExn|tensorSubExn|tensorIterSlice|tensorEq|tensor2string)\\b"
