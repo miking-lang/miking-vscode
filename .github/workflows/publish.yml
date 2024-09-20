@@ -6,6 +6,9 @@ on:
 
 name: Publish Extension
 
+permissions:
+  contents: write  
+
 jobs:
   publish:
     runs-on: ubuntu-latest
