@@ -38,6 +38,6 @@
     "publish": "vsce publish --yarn"
   },
   "dependencies": {
-    "vsce": "^2.14.0"
+    "@vscode/vsce": "^2.14.0"
   }
 }
