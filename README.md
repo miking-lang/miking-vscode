@@ -12,7 +12,7 @@ npm install
 ```
 followed by
 ```
-npm run vsce package
+npm run package
 ```
 This will produce a `vsix` file in the root directory. Alternatively you can download a pre-built `vsix` file from the [releases](https://github.com/miking-lang/miking-vscode/releases) page.
 
