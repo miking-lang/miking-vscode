@@ -3,8 +3,11 @@ All notable changes to the "miking-vscode" extension will be documented in this 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
-- Initial release
+## [1.1.0]
+
+### Changed
+
+- Removed deprecated map intrinsics.
 
 ## [1.0.0]
 
@@ -15,3 +18,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changed
 
 - Re-written language grammar to use more granular scopes and include new langauge constructs.
+
+## [Unreleased]
+- Initial release
