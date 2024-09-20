@@ -34,7 +34,7 @@
     ]
   },
   "scripts": {
-    "package": "vsce package",
+    "package": "vsce package --skip-license",
     "publish": "vsce publish --yarn"
   },
   "dependencies": {
