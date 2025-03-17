@@ -3,6 +3,10 @@ All notable changes to the "miking-vscode" extension will be documented in this 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.1.1]
+
+- Patch dependencies.
+
 ## [1.1.0]
 
 ### Changed

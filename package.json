@@ -2,7 +2,7 @@
   "name": "miking-core-vscode",
   "displayName": "Miking Core VSCode",
   "description": "Language support for Miking Core",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "SimoneStefani",
   "repository": "https://github.com/miking-lang/miking-vscode",
   "engines": {
